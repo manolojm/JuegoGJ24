@@ -37,7 +37,8 @@ public class Sentarse : MonoBehaviour {
     // Crea enemigos
     public void CrearEnemigo() {
         ElegirPuntosChiste();
-        
+        rondas++;
+
         if ((dislikes > 2) || (rondas > 4)) {
             FinJuego();
         } else {
@@ -60,8 +61,7 @@ public class Sentarse : MonoBehaviour {
     // Contar un chiste
     public void ContarChiste(){
         sonidos[rondas].Play();
-        rondas++;
-        Awake("PararChiste", 3.0f);
+        Invoke("PararChiste", 3.0f);
     }
 
     // Parar chiste
