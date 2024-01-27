@@ -6,10 +6,10 @@ public class JuegoManager : MonoBehaviour
 {
     [Header("PERSONAJE1")]
     public GameObject personaje1;
-    [Header ("PERSONAJE2")]
+    [Header("PERSONAJE2")]
     public GameObject personaje2;
 
-    public Animator animator;
+    public Animator fundido;
 
     void Start()
     {
@@ -17,19 +17,15 @@ public class JuegoManager : MonoBehaviour
         personaje2.SetActive(false);
     }
 
- 
-    void OnTriggerEnter (Collider collider)
+
+    void OnTriggerEnter(Collider other)
     {
-        
+
         personaje1.SetActive(false);
         personaje2.SetActive(true);
-        
-        animacionEntrada();
-        
+        fundido.Play("Fundidodeentrada");
+
+
     }
 
-    public void animacionEntrada()
-    {
-        animator.Play("Animacionpersonaje");
-    }
 }

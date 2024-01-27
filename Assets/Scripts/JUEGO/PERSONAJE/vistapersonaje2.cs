@@ -24,8 +24,10 @@ public class vistapersonaje2 : MonoBehaviour
 
         xRotation = Mathf.Clamp(xRotation, -60f, 50f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 180, 0);
+        transform.localRotation = Quaternion.Euler(xRotation, 80, 0);
 
         playerBody.Rotate(Vector3.up * mouseX);
     }
 }
+
+
