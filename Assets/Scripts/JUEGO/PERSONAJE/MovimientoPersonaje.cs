@@ -25,7 +25,7 @@ public class MovimientoPersonaje : MonoBehaviour
 
         if (hor != 0 || ver != 0)
         {
-            Vector3 direction = (transform.forward * hor - transform.right * ver).normalized;
+            Vector3 direction = (transform.forward * hor + transform.right * ver).normalized;
 
             velocity = direction * movementSpeed;
         }
