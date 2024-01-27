@@ -22,7 +22,7 @@ public class vistaPersonaje : MonoBehaviour
 
         xRotation -= mouseY;
 
-        xRotation = Mathf.Clamp(xRotation, -60f, 50f);
+        xRotation = Mathf.Clamp(xRotation, -60f, 40f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
 

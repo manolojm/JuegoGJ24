@@ -8,6 +8,8 @@ public class JuegoManager : MonoBehaviour
     public GameObject personaje1;
     [Header("PERSONAJE2")]
     public GameObject personaje2;
+    [Header("Luz")]
+    public GameObject luz;
 
     public Animator fundido;
 
@@ -15,6 +17,7 @@ public class JuegoManager : MonoBehaviour
     {
         personaje1.SetActive(true);
         personaje2.SetActive(false);
+        luz.SetActive(true);
     }
 
 
@@ -23,6 +26,7 @@ public class JuegoManager : MonoBehaviour
 
         personaje1.SetActive(false);
         personaje2.SetActive(true);
+        luz.SetActive(false);
         fundido.Play("Fundidodeentrada");
 
 
