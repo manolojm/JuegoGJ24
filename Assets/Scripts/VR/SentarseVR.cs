@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Sentarse : MonoBehaviour {
+public class SentarseVR : MonoBehaviour {
     public GameObject[] enemigos;
     public Animator miTelon;
     public GameObject canvas;

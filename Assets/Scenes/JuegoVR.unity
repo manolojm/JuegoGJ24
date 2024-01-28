@@ -1227,7 +1227,7 @@ Transform:
   m_GameObject: {fileID: 206753198}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.7, y: 0.281, z: -0.20000005}
+  m_LocalPosition: {x: -1.7, y: 0.391, z: -0.20000005}
   m_LocalScale: {x: 0.073670976, y: 0.07367097, z: 0.07367097}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1252,7 +1252,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &206753201
 MeshRenderer:

@@ -17,6 +17,7 @@ public class QueEmpieceLaFuncion : MonoBehaviour
     {
         
     }
+
     public void OnTriggerEnter(Collider other) {
         sit.EmpezarActuacion();
     }
