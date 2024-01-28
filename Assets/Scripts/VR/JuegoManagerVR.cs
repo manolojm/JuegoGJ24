@@ -8,7 +8,7 @@ public class JuegoManagerVR : MonoBehaviour
     public GameObject luz;
 
     public Animator fundido;
-    public Sentarse sit;
+    public SentarseVR sit;
 
     void Start()
     {
