@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SentarseVR : MonoBehaviour {
+public class Sentarse : MonoBehaviour {
     public GameObject[] enemigos;
     public Animator miTelon;
     public GameObject canvas;
@@ -18,13 +18,12 @@ public class SentarseVR : MonoBehaviour {
 
     public AudioSource[] sonidos;
 
+    // Start is called before the first frame update
+    
+
+    // Start is called before the first frame update
     void Start() {
-        //EmpezarActuacion();
-        likes = 0;
-        dislikes = 0;
-        rondas = 0;
-        vota = 0;
-        ElegirPuntosChiste();
+        Invoke("EmpezarActuacion", 10.0f);
     }
 
     // Update is called once per frame

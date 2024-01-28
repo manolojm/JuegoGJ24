@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JuegoManager : MonoBehaviour
+public class JuegoManagerVR : MonoBehaviour
 {
-    [Header("PERSONAJE1")]
-    public GameObject personaje1;
-    [Header("PERSONAJE2")]
-    public GameObject personaje2;
     [Header("Luz")]
     public GameObject luz;
 
@@ -22,14 +18,8 @@ public class JuegoManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        personaje1.SetActive(false);
-        personaje2.SetActive(true);
         luz.SetActive(false);
         fundido.Play("Fundidodeentrada");
-        //sit.EmpezarActuacion();
-    }
-
-    public void QueEmpiece() {
         //sit.EmpezarActuacion();
     }
 
