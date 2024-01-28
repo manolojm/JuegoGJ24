@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SentarseVR : MonoBehaviour {
     public GameObject[] enemigos;
@@ -152,6 +153,10 @@ public class SentarseVR : MonoBehaviour {
         } else {
             canvasVictoria.SetActive(true);
         }
-        
+    }
+
+    public void Reload() {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }
