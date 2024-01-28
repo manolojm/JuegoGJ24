@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class Sentarse : MonoBehaviour {
     public GameObject[] enemigos;
+    public GameObject[] sonidos;
     public Animator miTelon;
     public GameObject canvas;
     public GameObject canvasDerrota;
     public GameObject canvasVictoria;
+    public GameObject canvasAcierto;
+    public GameObject canvasFallo;
 
     public int likes;
     public int dislikes;
@@ -16,7 +19,7 @@ public class Sentarse : MonoBehaviour {
     public int puntosChiste;
     public int vota;
 
-    public AudioSource[] sonidos;
+    //public AudioSource[] sonidos;
 
     void Start() {
         //EmpezarActuacion();
@@ -74,13 +77,13 @@ public class Sentarse : MonoBehaviour {
 
     // Contar un chiste
     public void ContarChiste() {
-        sonidos[rondas].Play();
+        //sonidos[rondas].Play();
         Invoke("PararChiste", 3.0f);
     }
 
     // Parar chiste
     public void PararChiste() {
-        sonidos[rondas].Stop();
+        //sonidos[rondas].Stop();
     }
 
     // Elegir puntos chiste 1-Bueno 0-Malo
@@ -97,6 +100,14 @@ public class Sentarse : MonoBehaviour {
     // Animación de cerrar el telón
     public void AnimCloseTelon() {
         miTelon.Play("BajarTelon");
+        Invoke("Sonidos", 1.0f);
+    }
+
+    public void Sonidos() {
+        var sonidosGenerados = sonidos[puntosChiste];
+        var sonidoPlantilla = Instantiate(sonidosGenerados, sonidosGenerados.transform.position, Quaternion.identity);
+        Destroy(sonidoPlantilla, 3);
+        
     }
 
     // Mostrar canvas
@@ -120,9 +131,11 @@ public class Sentarse : MonoBehaviour {
         if (puntosChiste == 1) {
             //Debug.Log("AciertoRisa1 - " + puntosChiste);
             likes++;
+            Invoke("CanvasAcierto", 1.0f);
         } else {
             //Debug.Log("FalloRisa1 - " + puntosChiste);
             dislikes++;
+            Invoke("CanvasFallo", 1.0f);
         }
         vota = 1;
         OcultarCanvas();
@@ -133,13 +146,36 @@ public class Sentarse : MonoBehaviour {
         if (puntosChiste != 1) {
             //Debug.Log("AciertoAbucheo0 - " + puntosChiste);
             likes++;
+            Invoke("CanvasAcierto", 1.0f);
         } else {
             //Debug.Log("FalloAbucheo0 - " + puntosChiste);
             dislikes++;
+            Invoke("CanvasFallo", 1.0f);
         }
         vota = 1;
         OcultarCanvas();
     }
+
+    public void CanvasAcierto() {
+        canvasAcierto.SetActive(true);
+        Invoke("CanvasAciertoB", 2.0f);
+    }
+
+    public void CanvasFallo() {
+        canvasFallo.SetActive(true);
+        Invoke("CanvasFalloB", 2.0f);
+    }
+
+    public void CanvasAciertoB() {
+        canvasAcierto.SetActive(false);
+    }
+
+    public void CanvasFalloB() {
+        canvasFallo.SetActive(false);
+    }
+
+
+
 
     // Puntuación
     public void Puntos() {
